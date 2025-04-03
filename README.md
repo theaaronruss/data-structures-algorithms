@@ -6,7 +6,6 @@ A collection of different data structures and algorithms
 
 ### Data Structures
 
-- Array
 - Linked List
   - Singly linked list
   - Doubly linked list
