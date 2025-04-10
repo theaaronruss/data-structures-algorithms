@@ -17,10 +17,7 @@ public:
      *
      * @param size The size of the array.
      */
-    Array(int size) : size(size)
-    {
-        data = new T[size]{};
-    }
+    Array(int size) : size(size), data(new T[size]{}) {}
 
     /**
      * @brief Release memory allocated for the array data.
