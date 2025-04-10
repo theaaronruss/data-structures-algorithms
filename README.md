@@ -13,6 +13,7 @@ Implementations of various data structures and algorithms
 - Linked List
 - Stack
 - Queue
+- Ring Buffer
 - Hash Table
 - Graph
 - General Tree
