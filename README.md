@@ -10,6 +10,7 @@ Implementations of various data structures and algorithms
 
 #### Data structures
 
+- Array List
 - Linked List
 - Stack
 - Queue
