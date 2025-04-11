@@ -59,9 +59,9 @@ public:
     }
 
     /**
-     * @brief Insert an element at a given index.
+     * @brief Insert an element at a given index. Resize the list if necessary.
      *
-     * @param index The index to insert an item at.
+     * @param index The index to insert item at.
      * @param value The value to insert.
      */
     void insert(int index, T value)
@@ -82,6 +82,7 @@ public:
      * @brief Remove an item from the list at a given index.
      *
      * @param index The index of the item to remove.
+     * @return The removed item.
      */
     T remove(int index)
     {
@@ -102,6 +103,7 @@ public:
      * @brief Get the item at the given index.
      *
      * @param index The index of the item to retrieve.
+     * @return The retrieved item.
      */
     T get(int index) const
     {
@@ -129,6 +131,8 @@ public:
 
     /**
      * @brief Get the current capacity.
+     *
+     * @return The current capacity.
      */
     int getCapacity() const
     {
@@ -137,6 +141,8 @@ public:
 
     /**
      * @brief Get the current size.
+     *
+     * @return The current size.
      */
     int getSize() const
     {
