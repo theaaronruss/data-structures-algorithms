@@ -6,6 +6,7 @@ Implementations of various data structures and algorithms
 
 - Array
 - Array List
+- Linked List
 - Stack
 - Queue
 
@@ -17,7 +18,6 @@ Implementations of various data structures and algorithms
 
 #### Data structures
 
-- Linked List
 - Ring Buffer
 - Hash Table
 - Graph
