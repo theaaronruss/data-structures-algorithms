@@ -1,6 +1,7 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+#include <iostream>
 #include <stdexcept>
 
 template <typename T>
@@ -40,12 +41,36 @@ public:
     /**
      * @brief Push a value to the front of the list.
      */
-    void pushFront(T value) {}
+    void pushFront(T value)
+    {
+        Node *node = new Node{value, head, nullptr};
+        if (head == nullptr && tail == nullptr)
+        {
+            head = tail = node;
+            size++;
+            return;
+        }
+        head->prev = node;
+        head = node;
+        size++;
+    }
 
     /**
      * @brief Push a value to the back of the list.
      */
-    void pushBack(T value) {}
+    void pushBack(T value)
+    {
+        Node *node = new Node{value, nullptr, tail};
+        if (head == nullptr && tail == nullptr)
+        {
+            head = tail = node;
+            size++;
+            return;
+        }
+        tail->next = node;
+        tail = node;
+        size++;
+    }
 
     /**
      * @brief Insert a value into the list at a given index.
@@ -62,7 +87,10 @@ public:
      * @param index The index to remove the item at.
      * @return The removed item.
      */
-    T remove(int index) {}
+    T remove(int index)
+    {
+        return nullptr;
+    }
 
     /**
      * @brief Get the value at a given index.
@@ -70,14 +98,35 @@ public:
      * @param index The index of the item to retrieve.
      * @return The retrieved item.
      */
-    T get(int index) const {}
+    T get(int index) const
+    {
+        return nullptr;
+    }
 
     /**
      * @brief Get the size of the list.
      *
      * @return The current size.
      */
-    int getSize() const {}
+    int getSize() const
+    {
+        return size;
+    }
+
+    /**
+     * @brief Print out the contents of the list.
+     */
+    void print() const
+    {
+        std::cout << "[ ";
+        Node *currNode = head;
+        while (currNode != nullptr)
+        {
+            std::cout << currNode->value << " ";
+            currNode = currNode->next;
+        }
+        std::cout << "]\n";
+    }
 };
 
 #endif
