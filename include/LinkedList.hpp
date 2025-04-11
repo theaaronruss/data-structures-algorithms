@@ -17,6 +17,15 @@ private:
     int size;
     Node *head;
     Node *tail;
+    Node *traverse(int index)
+    {
+        Node *currNode = head;
+        for (int i = 0; i < index && currNode != nullptr; i++)
+        {
+            currNode = currNode->next;
+        }
+        return currNode;
+    }
 
 public:
     /**
@@ -73,23 +82,74 @@ public:
     }
 
     /**
-     * @brief Insert a value into the list at a given index.
+     * @brief Insert a value into the list at a given index. If the given index is equal to the current size, the item
+     * is appended to the list.
      *
      * @param index The index to insert the item at.
      * @param value The value to insert.
      * @throws std::out_of_range If index is out of bounds.
      */
-    void insert(int index, T value) {}
+    void insert(int index, T value)
+    {
+        if (index < 0 || index > size)
+        {
+            throw std::out_of_range("Invalid index");
+        }
+        if (index == size)
+        {
+            pushBack(value);
+            return;
+        }
+        if (index == 0)
+        {
+            pushFront(value);
+            return;
+        }
+        Node *currNode = head;
+        for (int i = 0; i < index; i++)
+        {
+            currNode = currNode->next;
+        }
+        Node *newNode = new Node{value, currNode, currNode->prev};
+        currNode->prev->next = newNode;
+        currNode->prev = newNode;
+        size++;
+    }
 
     /**
      * @brief Remove an item at the given index.
      *
      * @param index The index to remove the item at.
      * @return The removed item.
+     * @throws std::out_of_range If index is out of bounds.
      */
     T remove(int index)
     {
-        return nullptr;
+        if (index < 0 || index >= size)
+        {
+            throw std::out_of_range("Invalid index");
+        }
+        Node *currNode = traverse(index);
+        if (currNode->prev != nullptr)
+        {
+            currNode->prev->next = currNode->next;
+        }
+        else
+        {
+            head = currNode->next;
+        }
+        if (currNode->next != nullptr)
+        {
+            currNode->next->prev = currNode->prev;
+        }
+        else
+        {
+            tail = currNode->prev;
+        }
+        T value = currNode->value;
+        delete currNode;
+        size--;
+        return value;
     }
 
     /**
