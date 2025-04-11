@@ -29,6 +29,9 @@ public:
 
     /**
      * @brief Get the element stored at a particular index.
+     *
+     * @param index The index of the element to retrieve.
+     * @return The retrieved element.
      */
     T get(int index) const
     {
@@ -41,6 +44,9 @@ public:
 
     /**
      * @brief Set the element at a particular index to a given value.
+     *
+     * @param index The index of the item to set.
+     * @param value The value to set at the given index.
      */
     void set(int index, T value)
     {
@@ -53,6 +59,8 @@ public:
 
     /**
      * @brief Get the size of the array.
+     *
+     * @return The size.
      */
     int getSize() const
     {
