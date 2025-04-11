@@ -7,6 +7,10 @@ Implementations of various data structures and algorithms
 - Array
 - Array List
 
+## Algorithms
+
+- Linear Search
+
 ### TODO
 
 #### Data structures
@@ -31,7 +35,6 @@ Implementations of various data structures and algorithms
 - Counting Sort
 - Quick Sort
 - Merge Sort
-- Linear Search
 - Binary Search
 - Breadth-First Search
 - Depth-First Search
