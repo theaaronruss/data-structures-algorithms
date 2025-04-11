@@ -17,7 +17,7 @@ private:
     int size;
     Node *head;
     Node *tail;
-    Node *traverse(int index)
+    Node *traverse(int index) const
     {
         Node *currNode = head;
         for (int i = 0; i < index && currNode != nullptr; i++)
@@ -153,10 +153,16 @@ public:
      *
      * @param index The index of the item to retrieve.
      * @return The retrieved item.
+     * @throws std::out_of_range If index is out of bounds.
      */
     T get(int index) const
     {
-        return nullptr;
+        if (index < 0 || index >= size)
+        {
+            throw std::out_of_range("Invalid index");
+        }
+        Node *node = traverse(index);
+        return node->value;
     }
 
     /**
