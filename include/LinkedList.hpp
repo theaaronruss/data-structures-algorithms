@@ -105,11 +105,7 @@ public:
             pushFront(value);
             return;
         }
-        Node *currNode = head;
-        for (int i = 0; i < index; i++)
-        {
-            currNode = currNode->next;
-        }
+        Node *currNode = traverse(index);
         Node *newNode = new Node{value, currNode, currNode->prev};
         currNode->prev->next = newNode;
         currNode->prev = newNode;
