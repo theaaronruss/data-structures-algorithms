@@ -3,7 +3,7 @@
 #include "LinkedList.hpp"
 
 template <typename T>
-bool linearSearch(Array<T> arr, T target)
+bool linearSearch(const Array<T> &arr, T target)
 {
     for (int i = 0; i < arr.getSize(); i++)
     {
@@ -16,7 +16,7 @@ bool linearSearch(Array<T> arr, T target)
 }
 
 template <typename T>
-bool linearSearch(ArrayList<T> arr, T target)
+bool linearSearch(const ArrayList<T> &arr, T target)
 {
     for (int i = 0; i < arr.getSize(); i++)
     {
@@ -29,7 +29,7 @@ bool linearSearch(ArrayList<T> arr, T target)
 }
 
 template <typename T>
-bool linearSearch(LinkedList<T> list, T target)
+bool linearSearch(const LinkedList<T> &list, T target)
 {
     for (int i = 0; i < list.getSize(); i++)
     {
